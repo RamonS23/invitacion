@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años - Diana Jacqueline</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            color: #d81b60;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #003366;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .countdown {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .imagenes-en-fila {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .imagenes-en-fila div {
+            text-align: center;
+            max-width: 45%;
+        }
+        .imagenes-en-fila img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .foto-principal {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .foto-principal img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .imagenes-en-fila {
+                flex-direction: column;
+                align-items: center;
+            }
+            .imagenes-en-fila div {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("May 30, 2025 14:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mis XV Años</h1>
+        <h2>Diana Jacqueline Ildefonso Sánchez</h2>
+        <div class="foto-principal">
+            <img src="images/xv.jpg" alt="Foto de Diana Jacqueline">
+        </div>
+        <p>Hay momentos inolvidables que se atesoran en el corazón para siempre, por esa razón, quiero que compartas conmigo este día tan especial.</p>
+
+        <div class="countdown">
+            <p>Faltan:</p>
+            <p id="countdown">Cargando...</p>
+        </div>
+
+        <div class="imagenes-en-fila">
+            <div>
+                <a href="#" target="_blank">
+                    <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco">
+                </a>
+                <h3>Misa</h3>
+                <p>30 de mayo del 2025</p>
+                <p>2:00 PM</p>
+                <p>Parroquia de San Francisco</p>
+                <p>Cuerámaro, Guanajuato</p>
+            </div>
+            <div>
+                <a href="#" target="_blank">
+                    <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada">
+                </a>
+                <h3>Recepción</h3>
+                <p>30 de mayo del 2025</p>
+                <p>4:00 PM</p>
+                <p>Salón La Cascada</p>
+                <p>Cuerámaro, Guanajuato</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>¡Esperamos contar con tu presencia!</p>
+        </div>
+    </div>
+</body>
+</html>
