@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación XV Años - Diana Jacqueline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Fondo de página */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
+            font-family: 'Playfair Display', serif;
             text-align: center;
+            color: #2c3e50;
+            
+            height: 100vh; /* Asegura que cubra toda la pantalla */
+            background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+            background-position: center; /* Mantiene la imagen centrada */
+            background-repeat: no-repeat; /* Evita que se repita */
+            background-attachment: fixed; /* Hace que el fondo permanezca fijo */
+            min-height: 100vh;
+            background-image: url('images/fondo7.png');
         }
+        
         .container {
-            text-align: center;
-            max-width: 800px;
+            width: 80%;
+            max-width: 600px;
+            height: 100vh; /* Ajusta la altura al 100% de la pantalla, puedes cambiarlo */
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #fff3f8, #fff3f8); /* Fondo con degradado */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            
+        }
+
+
+        .imagen-ajustada {
+            width: 100%; /* Hace que la imagen se ajuste al ancho del contenedor */
+            height: auto; /* Mantiene la proporción original */
+            display: block; /* Evita espacios en blanco debajo de la imagen */
         }
         h1 {
             font-family: 'Pacifico', cursive; /* Aplicar fuente especial */
@@ -165,7 +179,6 @@
             gap: 30px; /* Espaciado entre los elementos */
             margin-top: 30px;
             padding: 20px;
-            background: linear-gradient(135deg, #c1a9da, #e466ed); /* Fondo con degradado */
             border-radius: 15px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -231,7 +244,7 @@
             color: #020202;
             margin-top: 40px;
             padding: 20px;
-            background: hsl(289, 59%, 60%);
+            background: hsla(#d7d7a8);
             border-radius: 12px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             max-width: 600px;
@@ -247,6 +260,22 @@
             font-family: 'Pacifico', cursive;
             font-size: 2rem;
             color: #000000;
+        }
+    
+        .flourish {
+            font-size: 24px;
+            color: #888;
+        }
+        .highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1a3d6b;
         }
 
 
@@ -305,7 +334,9 @@
 </script>
 </head>
 <body>
+    
     <div class="container">
+        
         <h1>Mis XV Años</h1>
         <h2>Diana Jacqueline Ildefonso Sánchez</h2>
         <div class="foto-principal">
@@ -426,4 +457,3 @@
     </div>
 </body>
 </html>
-
