@@ -109,6 +109,16 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
+         @media (max-width: 768px) {
+        .galeria img {
+            max-width: 30%;  /* Establece que las imágenes ocupen el 30% del ancho */
+            }
+        }
+        @media (min-width: 769px) {
+            .galeria img {
+                max-width: 30%;  /* Asegura que las imágenes ocupen el 30% del ancho, en PC */
+            }
+        }
         .galeria img:hover {
             transform: scale(1.1);
         }
