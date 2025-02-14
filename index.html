@@ -19,7 +19,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: #fff;
+            background: linear-gradient(135deg, #fff3f8, #fff3f8); /* Fondo con degradado */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
@@ -30,7 +30,7 @@
             margin-bottom: 20px;
         }
         h2 {
-            font-family: 'Dancing Script', cursive;/* Aplicar fuente especial */
+            font-family: 'Poppins', sans-serif;
             font-size: 36px;
             color: #6d1bd8; /* Color rosado elegante */
             margin-bottom: 20px;
@@ -159,6 +159,17 @@
         .modal .prev:hover, .modal .next:hover {
             background: rgba(255, 255, 255, 0.8);
         }
+        .imagenes-en-fila {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Espaciado entre los elementos */
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #c1a9da, #e466ed); /* Fondo con degradado */
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
         .imagenes-en-fila div {
             text-align: center;
             background: white;
@@ -196,6 +207,49 @@
             color: #555;
             margin: 5px 0;
         }
+        .flourish {
+            font-size: 24px;
+            color: #888;
+            margin: 10px 0;
+        }
+        .highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1a3d6b;
+        }
+
+        .mensaje-final {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #020202;
+            margin-top: 40px;
+            padding: 20px;
+            background: hsl(289, 59%, 60%);
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mensaje-final p {
+            margin: 10px 0;
+        }
+
+        .mensaje-final .firma {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: #000000;
+        }
+
+
 
 
 
@@ -257,7 +311,22 @@
         <div class="foto-principal">
             <img src="images/xv.jpg" alt="Foto de Diana Jacqueline">
         </div>
-        <p>Hay momentos inolvidables que se atesoran en el corazón para siempre, por esa razón, quiero que compartas conmigo este día tan especial.</p>
+        <p><strong>Hay momentos inolvidables</strong> que se atesoran en el corazón para siempre,  
+            por esa razón, quiero que compartas conmigo este día tan especial:</p>
+    
+            <h1>Mis XV años</h1>
+    
+            <div class="flourish">── ✦ ──</div>
+    
+            <p>Acompáñanos a celebrar con la bendición de Dios y mis padres:</p>
+    
+            <p class="name">Ramón Ildefonso Sánchez & Josefina Sánchez Sánchez</p>
+    
+            <div class="flourish">── ✦ ──</div>
+    
+            <p class="highlight">Mis Padrinos</p>
+    
+            <p class="name">José Sánchez Sánchez & Juana Sánchez</p>
 
         <div class="countdown">
             <p>Faltan:</p>
@@ -346,9 +415,15 @@
             <button class="next" onclick="cambiarImagen(1)">➡</button>
         </div>
 
-        
+        <div class="mensaje-final">
+            <p>¡Gracias por ser parte de uno de los mejores días de mi vida!</p>
+            <p>Con cariño:</p>
+            <p class="firma">Diana Jacqueline</p>
+        </div>
+    
         
 
     </div>
 </body>
 </html>
+
