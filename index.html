@@ -7,16 +7,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* Fondo de página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             text-align: center;
-            background-color: #f8f9fa;
         }
         .container {
             text-align: center;
-            max-width: 90%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background: #fff;
@@ -24,100 +24,192 @@
             border-radius: 10px;
         }
         h1 {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Pacifico', cursive; /* Aplicar fuente especial */
             font-size: 36px;
-            color: #d81b60;
+            color: #d81b60; /* Color rosado elegante */
             margin-bottom: 20px;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #003366;
         }
         p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.5;
         }
         .countdown {
             margin: 20px 0;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
         }
-        .imagenes-en-fila {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .imagenes-en-fila div {
-            text-align: center;
-            max-width: 45%;
-        }
-        .imagenes-en-fila img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .foto-principal {
-            display: flex;
-            justify-content: center;
+        .location {
             margin: 20px 0;
         }
-        .foto-principal img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        .location a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
         }
         .footer {
             margin-top: 30px;
             font-size: 1rem;
             color: #666;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            p {
-                font-size: 0.9rem;
-            }
-            .imagenes-en-fila {
-                flex-direction: column;
-                align-items: center;
-            }
-            .imagenes-en-fila div {
-                max-width: 100%;
-            }
+         /* Estilo para alinear las imágenes en fila */
+        .imagenes-en-fila {
+            display: flex;
+            justify-content: center; /* Centra las imágenes */
+            gap: 20px; /* Espaciado entre las imágenes */
         }
+        .imagenes-en-fila img {
+            width: 200px; /* Tamaño fijo para las imágenes */
+            height: auto; /* Mantiene la proporción */
+            border-radius: 10px; /* Bordes redondeados opcionales */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+        }
+        .foto-principal {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Espaciado superior e inferior */
+        }
+        .foto-principal img {
+            width: 300px; /* Tamaño de la imagen principal */
+            height: auto; /* Mantiene la proporción */
+            border-radius: 20px; /* Bordes redondeados */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+        }
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .galeria img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+                /* Estilos del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .modal .cerrar {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        .modal .cerrar:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        .modal .prev, .modal .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .modal .prev {
+            left: 10px;
+        }
+
+        .modal .next {
+            right: 10px;
+        }
+
+        .modal .prev:hover, .modal .next:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+
+
     </style>
-    <script>
-        function updateCountdown() {
-            const eventDate = new Date("May 30, 2025 14:00:00").getTime();
-            const now = new Date().getTime();
-            const distance = eventDate - now;
+<script>
+    let imagenesGaleria = [];
+    let imagenActual = 0;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    function abrirModal(src) {
+        let modal = document.getElementById("modal");
+        let imagenModal = document.getElementById("imagenModal");
 
-            document.getElementById("countdown").innerHTML = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        // Obtener todas las imágenes de la galería
+        let imagenes = document.querySelectorAll(".galeria img");
+        imagenesGaleria = Array.from(imagenes).map(img => img.src);
 
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-            }
+        // Encontrar el índice de la imagen seleccionada
+        imagenActual = imagenesGaleria.indexOf(src);
+
+        if (imagenActual !== -1) {
+            imagenModal.src = imagenesGaleria[imagenActual];
+            modal.style.display = "flex";
+        } else {
+            console.error("No se encontró la imagen en la galería.");
         }
+    }
 
-        setInterval(updateCountdown, 1000);
-    </script>
+    function cerrarModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    function cambiarImagen(direccion) {
+        if (imagenesGaleria.length === 0) return; // Evita errores si no hay imágenes cargadas
+
+        imagenActual = (imagenActual + direccion + imagenesGaleria.length) % imagenesGaleria.length;
+        document.getElementById("imagenModal").src = imagenesGaleria[imagenActual];
+    }
+
+    // Asegurar que el modal no se muestre al recargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("modal").style.display = "none";
+    });
+
+    // Soporte para teclas izquierda y derecha
+    document.addEventListener("keydown", function (event) {
+        let modal = document.getElementById("modal");
+        if (modal.style.display === "flex") {
+            if (event.key === "ArrowRight") cambiarImagen(1);
+            if (event.key === "ArrowLeft") cambiarImagen(-1);
+            if (event.key === "Escape") cerrarModal();
+        }
+    });
+</script>
 </head>
 <body>
     <div class="container">
@@ -132,11 +224,40 @@
             <p>Faltan:</p>
             <p id="countdown">Cargando...</p>
         </div>
+        <script>
+            function actualizarCuentaRegresiva() {
+                const fechaEvento = new Date('2025-05-30T00:00:00'); // Fecha del evento (30 de mayo)
+                const ahora = new Date(); // Fecha actual
+        
+                // Calculamos la diferencia en milisegundos
+                const diferencia = fechaEvento - ahora;
+        
+                if (diferencia > 0) {
+                    // Convertimos la diferencia a días, horas, minutos y segundos
+                    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+        
+                    // Actualizamos el contenido de #countdown
+                    document.getElementById('countdown').innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+                } else {
+                    document.getElementById('countdown').innerHTML = "¡El evento ha llegado!";
+                }
+            }
+        
+            // Actualizamos la cuenta regresiva cada segundo
+            setInterval(actualizarCuentaRegresiva, 1000);
+        
+            // Llamada inicial para mostrar el contador de inmediato
+            actualizarCuentaRegresiva();
+        </script>
 
         <div class="imagenes-en-fila">
+            
             <div>
-                <a href="https://www.google.com.mx/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626632,-101.67179,20z/data=!4m6!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js?entry=ttu&g_ep=EgoyMDI1MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                    <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco">
+                <a href="https://www.google.com/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626333,-101.6721192,19.75z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js" target="_blank">
+                    <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco" style="width: 80px; height: auto;">
                 </a>
                 <h3>Misa</h3>
                 <p>30 de mayo del 2025</p>
@@ -144,9 +265,11 @@
                 <p>Parroquia de San Francisco</p>
                 <p>Cuerámaro, Guanajuato</p>
             </div>
+
+            <!-- Imagen con enlace a la ubicación del salón -->
             <div>
-                <a href="https://www.google.com.mx/maps/place/Salon+La+Cascada/@20.6214463,-101.6869444,15.75z/data=!4m6!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3?entry=ttu&g_ep=EgoyMDI1MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                    <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada">
+                <a href="https://www.google.com/maps/place/Salon+La+Cascada/@20.6179217,-101.6835474,16.25z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3" target="_blank">
+                    <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada" style="width: 80px; height: auto;">
                 </a>
                 <h3>Recepción</h3>
                 <p>30 de mayo del 2025</p>
@@ -154,11 +277,39 @@
                 <p>Salón La Cascada</p>
                 <p>Cuerámaro, Guanajuato</p>
             </div>
+
         </div>
 
         <div class="footer">
             <p>¡Esperamos contar con tu presencia!</p>
         </div>
+
+        <h2>Galería de Recuerdos</h2>
+        <div class="galeria">
+            <img src="images/foto1.png" alt="Foto 1"  onclick="abrirModal(this.src)">
+            <img src="images/foto2.jpg" alt="Foto 2"  onclick="abrirModal(this.src)">
+            <img src="images/foto3.jpg" alt="Foto 3"  onclick="abrirModal(this.src)">
+            <img src="images/foto4.jpg" alt="Foto 4"  onclick="abrirModal(this.src)">
+            <img src="images/foto5.jpg" alt="Foto 5"  onclick="abrirModal(this.src)">
+            <img src="images/foto6.jpeg" alt="Foto 6" onclick="abrirModal(this.src)">
+            <img src="images/foto7.jpeg" alt="Foto 7" onclick="abrirModal(this.src)">
+            <img src="images/foto8.jpeg" alt="Foto 8" onclick="abrirModal(this.src)">
+            <img src="images/foto9.jpeg" alt="Foto 9" onclick="abrirModal(this.src)">
+            <img src="images/foto10.jpg" alt="Foto 10" onclick="abrirModal(this.src)">
+            
+        </div>
+        <!-- Modal -->
+
+        <div id="modal" class="modal">
+            <span class="cerrar" onclick="cerrarModal()">✖</span>
+            <button class="prev" onclick="cambiarImagen(-1)">⬅</button>
+            <img id="imagenModal">
+            <button class="next" onclick="cambiarImagen(1)">➡</button>
+        </div>
+
+        
+        
+
     </div>
 </body>
 </html>
