@@ -159,6 +159,43 @@
         .modal .prev:hover, .modal .next:hover {
             background: rgba(255, 255, 255, 0.8);
         }
+        .imagenes-en-fila div {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 200px;
+        }
+
+        .imagenes-en-fila div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .imagenes-en-fila img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .imagenes-en-fila div:hover img {
+            transform: scale(1.1);
+        }
+
+        .imagenes-en-fila h3 {
+            font-size: 1.2rem;
+            color: #9c1be1;
+            margin: 10px 0 5px;
+        }
+
+        .imagenes-en-fila p {
+            font-size: 1rem;
+            color: #555;
+            margin: 5px 0;
+        }
 
 
 
