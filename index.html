@@ -4,118 +4,1063 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación XV Años - Diana Jacqueline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-/* Fondo de página */
+        /* Estilos generales */
+        :root {
+            --azul-celeste: #87CEEB;
+            --azul-claro: #B0E0E6;
+            --azul-medio: #4682B4;
+            --azul-oscuro: #1E3F66;
+            --azul-rey: #0F1A3D;
+            --blanco: #FFFFFF;
+            --gris-claro: #F8F9FA;
+            --dorado: #D4AF37;
+            --rosa-claro: #FFD6E7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
+            background: 
+                /* Fondo principal */
+                linear-gradient(135deg, var(--azul-claro), var(--azul-celeste)),
+                /* Textura sutil */
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="rgba(255,255,255,0.02)" d="M100,50 C120,30 140,40 160,30 C180,20 190,40 200,50 C190,60 180,80 160,70 C140,60 120,70 100,60 C80,50 60,60 40,50 C20,40 10,20 0,30 C10,40 20,60 40,50 C60,40 80,30 100,50 Z"/></svg>');
+            color: var(--azul-oscuro);
+            line-height: 1.8;
+            overflow-x: hidden;
             text-align: center;
-            color: #2c3e50;
-            
-            height: 100vh; /* Asegura que cubra toda la pantalla */
-            background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
-            background-position: center; /* Mantiene la imagen centrada */
-            background-repeat: no-repeat; /* Evita que se repita */
-            background-attachment: fixed; /* Hace que el fondo permanezca fijo */
-            min-height: 100vh;
-            background-image: url('images/fondo7.png');
         }
-       
+        
+        /* Elementos decorativos */
+        .decoracion {
+            position: fixed;
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
 
+        .mariposa-decorativa {
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%231E3F66" d="M50,10 C60,20 70,15 80,20 C90,25 85,35 90,40 C95,45 85,55 80,60 C75,65 65,60 60,65 C55,70 50,85 40,80 C30,75 25,65 20,60 C15,55 5,45 10,40 C15,35 10,25 20,20 C30,15 40,0 50,10 Z" transform="rotate(45 50 50)"/></svg>') center/contain no-repeat;
+            animation: aleteo 8s ease-in-out infinite;
+        }
 
-        .imagen-ajustada {
-            width: 100%; /* Hace que la imagen se ajuste al ancho del contenedor */
-            height: auto; /* Mantiene la proporción original */
-            display: block; /* Evita espacios en blanco debajo de la imagen */
+        .flor-decorativa {
+            width: 30px;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%231E3F66" d="M50,10 C55,15 60,10 65,15 C70,20 65,25 70,30 C75,35 80,30 85,35 C90,40 85,45 90,50 C95,55 90,60 85,65 C80,70 75,65 70,70 C65,75 60,70 55,75 C50,80 45,75 40,70 C35,65 30,70 25,65 C20,60 15,65 10,60 C5,55 10,50 15,45 C20,40 25,45 30,40 C35,35 40,40 45,35 C50,30 45,25 50,20 C55,15 45,5 50,10 Z"/></svg>') center/contain no-repeat;
+            animation: girar 15s linear infinite;
         }
-        h1 {
-            font-family: 'Pacifico', cursive; /* Aplicar fuente especial */
-            font-size: 36px;
-            color: #d81b60; /* Color rosado elegante */
-            margin-bottom: 20px;
+
+        @keyframes aleteo {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(10px, 5px) rotate(5deg) scale(1.1); }
+            50% { transform: translate(0, 10px) rotate(0deg) scale(1); }
+            75% { transform: translate(-10px, 5px) rotate(-5deg) scale(1.1); }
         }
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 36px;
-            color: #6d1bd8; /* Color rosado elegante */
-            margin-bottom: 20px;
+
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
+        
+        /* Efecto de partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.5;
         }
-        .countdown {
-            margin: 20px 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .location {
-            margin: 20px 0;
-        }
-        .location a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #666;
-        }
-         /* Estilo para alinear las imágenes en fila */
-        .imagenes-en-fila {
-            display: flex;
-            justify-content: center; /* Centra las imágenes */
-            gap: 20px; /* Espaciado entre las imágenes */
-        }
-        .imagenes-en-fila img {
-            width: 200px; /* Tamaño fijo para las imágenes */
-            height: auto; /* Mantiene la proporción */
-            border-radius: 10px; /* Bordes redondeados opcionales */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-        }
-        .foto-principal {
+        
+        /* Estilos del sobre */
+        .envelope-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(30,63,102,0.9) 0%, rgba(0,0,0,0.9) 100%);
             display: flex;
             justify-content: center;
-            margin: 20px 0; /* Espaciado superior e inferior */
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
         }
+        
+        .envelope {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(145deg, var(--azul-celeste), var(--azul-medio));
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite, pulse 2s infinite alternate;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .envelope:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+            background: linear-gradient(145deg, var(--azul-medio), var(--azul-oscuro));
+            transform-origin: top;
+            transition: all 0.8s ease-in-out;
+            z-index: 2;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .envelope.open .flap {
+            transform: translateY(-100%);
+            opacity: 0.7;
+        }
+        
+        .envelope .letter {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(to bottom, var(--blanco) 0%, var(--gris-claro) 100%);
+            border-radius: 5px;
+            z-index: 1;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+            font-size: 24px;
+            color: var(--azul-oscuro);
+            text-align: center;
+            padding: 20px;
+            transform: translateY(20%);
+            opacity: 0;
+            transition: all 0.5s ease-in-out 0.3s;
+            border: 1px solid rgba(134, 206, 235, 0.3);
+        }
+        
+        .envelope.open .letter {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.1)" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 50,95 Q15,65 10,40 Q5,15 30,10"/></svg>') center/cover no-repeat;
+            opacity: 0.3;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); }
+            100% { box-shadow: 0 10px 35px rgba(134, 206, 235, 0.6); }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Contenido principal */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.1)" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 50,95 Q15,65 10,40 Q5,15 30,10"/></svg>') center/cover no-repeat;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        /* Encabezados */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-top: 20px;
+            background: linear-gradient(to right, var(--azul-medio), var(--azul-rey));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--azul-celeste), var(--dorado));
+            border-radius: 3px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--azul-medio);
+        }
+        
+        /* Texto centrado */
+        .texto-centrado {
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+        
+        /* Foto principal */
+        .foto-principal {
+            margin: 30px 0;
+            position: relative;
+            perspective: 1000px;
+        }
+        
         .foto-principal img {
-            width: 300px; /* Tamaño de la imagen principal */
-            height: auto; /* Mantiene la proporción */
-            border-radius: 20px; /* Bordes redondeados */
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            border: 10px solid var(--blanco);
+            display: block;
+            margin: 0 auto;
         }
+        
+        .foto-principal:hover img {
+            transform: rotateY(10deg) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .foto-principal::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed var(--azul-celeste);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .foto-principal:hover::before {
+            opacity: 1;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+        }
+
+        /* Mensaje de invitación elegante */
+        .invitacion-memorable {
+            background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,248,255,0.92));
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1), 
+                        inset 0 0 30px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transform: scale(0.98);
+            transition: all 0.5s ease;
+        }
+
+        .invitacion-memorable:hover {
+            transform: scale(1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15), 
+                        inset 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .invitacion-memorable::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--azul-celeste), var(--dorado), var(--azul-rey), var(--dorado), var(--azul-celeste));
+        }
+
+        .invitacion-texto {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: var(--azul-oscuro);
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .invitacion-firma {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-rey);
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+            position: relative;
+        }
+
+        .invitacion-firma::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--dorado), transparent);
+        }
+
+        .invitacion-decoracion {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            opacity: 0.1;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%231E3F66" d="M50,0 C60,20 80,20 100,30 C80,40 60,60 50,80 C40,60 20,40 0,30 C20,20 40,20 50,0 Z"/></svg>') center/contain no-repeat;
+        }
+
+        /* Efecto de flor decorativa */
+        .flor-decorativa-invitacion {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23D4AF37" d="M50,10 C55,15 60,10 65,15 C70,20 65,25 70,30 C75,35 80,30 85,35 C90,40 85,45 90,50 C95,55 90,60 85,65 C80,70 75,65 70,70 C65,75 60,70 55,75 C50,80 45,75 40,70 C35,65 30,70 25,65 C20,60 15,65 10,60 C5,55 10,50 15,45 C20,40 25,45 30,40 C35,35 40,40 45,35 C50,30 45,25 50,20 C55,15 45,5 50,10 Z"/></svg>') center/contain no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        /* Textos */
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--azul-oscuro);
+        }
+        
+        .highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-oscuro);
+            margin: 20px 0;
+            text-align: center;
+            display: block;
+        }
+        
+        /* Nombres elegantes */
+        .nombre-elegante {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--azul-oscuro);
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nombre-elegante::before, .nombre-elegante::after {
+            content: '✽';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dorado);
+            font-size: 1.5rem;
+        }
+        
+        .nombre-elegante::before {
+            left: -10px;
+        }
+        
+        .nombre-elegante::after {
+            right: -10px;
+        }
+        
+        /* Divisores decorativos */
+        .flourish {
+            font-size: 24px;
+            color: var(--dorado);
+            margin: 30px auto;
+            text-align: center;
+            position: relative;
+            width: 80%;
+        }
+        
+        .flourish::before, .flourish::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--dorado), transparent);
+        }
+        
+        .flourish::before {
+            left: 0;
+        }
+        
+        .flourish::after {
+            right: 0;
+        }
+        
+        /* Contador regresivo */
+        .countdown {
+            margin: 40px 0;
+            perspective: 1000px;
+        }
+        
+        .countdown-circles {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .countdown-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    perspective: 1000px;
+    }   
+
+        .countdown-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            transform: rotateX(0deg);
+        }
+
+        .countdown-item:hover .countdown-card {
+            transform: rotateX(15deg);
+        }
+
+        .countdown-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-face-front {
+            background: linear-gradient(145deg, var(--azul-rey), var(--azul-oscuro));
+            color: white;
+            transform: rotateX(0deg);
+        }
+
+        .countdown-face-back {
+            background: linear-gradient(145deg, var(--dorado), #f1c40f);
+            color: var(--azul-rey);
+            transform: rotateX(180deg);
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .countdown-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-rey);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .countdown-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--dorado), transparent);
+        }
+
+        /* Animación de flip */
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+
+        .flipping {
+            animation: flip 0.8s ease-out;
+        }
+        .circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--azul-rey), var(--azul-medio));
+            color: var(--blanco);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .circle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .circle::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .circle:hover::before {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+        
+        .circle span:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .circle span:last-child {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Sección de ubicaciones */
+        .imagenes-en-fila {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .evento-card {
+            text-align: center;
+            background: var(--blanco);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .evento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--azul-celeste), var(--dorado));
+        }
+        
+        .evento-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .evento-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .evento-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid var(--azul-celeste);
+            padding: 5px;
+            background-color: var(--blanco);
+            transition: all 0.3s ease;
+        }
+        
+        .evento-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--dorado);
+        }
+        
+        .evento-card h3 {
+            font-size: 1.4rem;
+            color: var(--azul-rey);
+            margin: 10px 0;
+        }
+        
+        .evento-card p {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: var(--azul-oscuro);
+        }
+        
+        /* Galería */
         .galeria {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 15px;
+            margin: 40px 0;
         }
+        
         .galeria img {
             width: 100%;
-            max-width: 150px;
-            height: auto;
+            max-width: 180px;
+            height: 180px;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid var(--blanco);
         }
-         @media (max-width: 768px) {
-        .galeria img {
-            max-width: 30%;  /* Establece que las imágenes ocupen el 30% del ancho */
-            }
-        }
-        @media (min-width: 769px) {
-            .galeria img {
-                max-width: 30%;  /* Asegura que las imágenes ocupen el 30% del ancho, en PC */
-            }
-        }
+        
         .galeria img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--dorado);
         }
-                /* Estilos del modal */
+        /* Nuevo estilo para padres y padrinos */
+        .parents-section {
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .parents-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--azul-rey);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .parents-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, var(--azul-celeste), var(--dorado), var(--azul-celeste));
+        }
+
+        .parents-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .parent-card {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+
+        .parent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: -1;
+        }
+
+        .parent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .parent-card-header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .parent-card-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--azul-rey);
+            margin-bottom: 10px;
+        }
+
+        .parent-card-header p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--azul-oscuro);
+            font-weight: 500;
+        }
+
+        .parent-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--azul-rey);
+            text-align: center;
+            margin: 15px 0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .parent-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--dorado);
+        }
+
+        .parent-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--azul-medio);
+            text-align: center;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .parent-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            color: var(--dorado);
+            font-size: 1.5rem;
+        }
+
+        .parent-separator::before,
+        .parent-separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px dashed var(--dorado);
+            margin: 0 15px;
+        }
+
+        /* Decoración adicional */
+        .parent-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* Confirmación de asistencia */
+        .confirmacion-asistencia {
+            background: linear-gradient(145deg, var(--blanco), var(--gris-claro));
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .confirmacion-asistencia::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(134,206,235,0.1)" d="M20,20 L80,20 L80,80 L20,80 Z"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .confirmacion-asistencia h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--azul-rey);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .confirmacion-opciones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .confirmacion-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            min-width: 150px;
+        }
+        
+        .confirmacion-btn.si {
+            background: linear-gradient(145deg, #4CAF50, #81C784);
+            color: white;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .confirmacion-btn.no {
+            background: linear-gradient(145deg, #F44336, #E57373);
+            color: white;
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+        }
+        
+        .confirmacion-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .confirmacion-btn:hover::before {
+            transform: translateX(0);
+        }
+        
+        .confirmacion-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .confirmacion-btn:active {
+            transform: translateY(1px);
+        }
+        
+        /* Footer y mensaje final */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--azul-oscuro);
+        }
+        
+        .mensaje-final {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, var(--blanco), var(--gris-claro));
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mensaje-final::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(134,206,235,0.1)" d="M20,20 L80,20 L80,80 L20,80 Z"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .mensaje-final p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .firma {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-rey);
+            margin-top: 15px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .firma::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--dorado), transparent);
+        }
+        
+        /* Control de música */
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(145deg, var(--azul-rey), var(--azul-oscuro));
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--blanco);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn.active {
+            background: linear-gradient(145deg, var(--azul-oscuro), var(--azul-rey));
+        }
+        
+        #playPauseBtn i {
+            font-size: 30px;
+        }
+        
+        audio {
+            display: none;
+        }
+        
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -123,340 +1068,972 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(30, 63, 102, 0.95);
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
         }
-
+        
         .modal img {
             max-width: 90%;
             max-height: 80vh;
             border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 5px solid var(--blanco);
         }
-
-        .modal .cerrar {
+        
+        .cerrar {
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 20px;
+            right: 30px;
             font-size: 30px;
-            color: white;
+            color: var(--blanco);
             cursor: pointer;
             font-weight: bold;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 50%;
+            transition: all 0.3s ease;
         }
-
-        .modal .cerrar:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: black;
+        
+        .cerrar:hover {
+            color: var(--dorado);
+            transform: rotate(90deg);
         }
-
-        .modal .prev, .modal .next {
+        
+        .prev, .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.2);
             border: none;
-            padding: 10px;
+            padding: 15px;
             font-size: 24px;
             cursor: pointer;
             border-radius: 50%;
+            color: var(--blanco);
+            transition: all 0.3s ease;
         }
-
-        .modal .prev {
-            left: 10px;
+        
+        .prev {
+            left: 30px;
         }
-
-        .modal .next {
-            right: 10px;
+        
+        .next {
+            right: 30px;
         }
-
-        .modal .prev:hover, .modal .next:hover {
+        
+        .prev:hover, .next:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Efectos de confeti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--azul-celeste);
+            opacity: 0;
+            z-index: 9999;
+            animation: confetti-fall 5s linear forwards;
+            pointer-events: none;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Sección de vestido */
+        .vestido-section {
+            margin: 50px 0;
+            padding: 30px;
             background: rgba(255, 255, 255, 0.8);
-        }
-        .imagenes-en-fila {
-            display: flex;
-            justify-content: center;
-            gap: 30px; /* Espaciado entre los elementos */
-            margin-top: 30px;
-            padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
-        .imagenes-en-fila div {
-            text-align: center;
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 200px;
+        
+        .vestido-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
         }
-
-        .imagenes-en-fila div:hover {
+        
+        .vestido-detail {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--blanco);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vestido-detail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .vestido-detail:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--dorado);
         }
-
-        .imagenes-en-fila img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .imagenes-en-fila div:hover img {
+        
+        .vestido-detail:hover img {
             transform: scale(1.1);
         }
+        
+        /* Sección de padres */
+        .parents-message {
+            background: linear-gradient(145deg, var(--azul-claro), var(--blanco));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parents-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(30,63,102,0.1)" d="M20,20 L80,20 L80,80 L20,80 Z"/></svg>');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .parents-message p {
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Efecto de fuegos artificiales */
+        .firework {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px var(--dorado);
+            animation: firework-animation 2s ease-out forwards;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        @keyframes firework-animation {
+            0% {
+                transform: translate(var(--x), var(--y));
+                opacity: 1;
+                width: 5px;
+                height: 5px;
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(20);
+                opacity: 0;
+                width: 2px;
+                height: 2px;
+            }
+        }
 
-        .imagenes-en-fila h3 {
+        /* Tarjeta de agradecimiento */
+        .tarjeta-agradecimiento {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,248,255,0.9));
+            border: 1px solid var(--dorado);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 
+                        inset 0 0 20px rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: all 0.5s ease;
+        }
+
+        .tarjeta-agradecimiento:hover {
+            transform: scale(1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15), 
+                        inset 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .tarjeta-agradecimiento::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--dorado), var(--azul-rey), var(--dorado));
+        }
+
+        .tarjeta-contenido {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tarjeta-agradecimiento h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--azul-rey);
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-agradecimiento p {
             font-size: 1.2rem;
-            color: #9c1be1;
-            margin: 10px 0 5px;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        .imagenes-en-fila p {
-            font-size: 1rem;
-            color: #555;
-            margin: 5px 0;
-        }
-        .flourish {
-            font-size: 24px;
-            color: #888;
-            margin: 10px 0;
-        }
-        .highlight {
-            font-family: 'Great Vibes', cursive;
-            font-size: 28px;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        .name {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1a3d6b;
-        }
-
-        .mensaje-final {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #020202;
-            margin-top: 40px;
-            padding: 20px;
-            background: hsla(#d7d7a8);
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mensaje-final p {
-            margin: 10px 0;
-        }
-
-        .mensaje-final .firma {
-            font-family: 'Pacifico', cursive;
+        .tarjeta-agradecimiento .firma {
             font-size: 2rem;
-            color: #000000;
-        }
-    
-        .flourish {
-            font-size: 24px;
-            color: #888;
-        }
-        .highlight {
-            font-family: 'Great Vibes', cursive;
-            font-size: 28px;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        .name {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1a3d6b;
+            margin-top: 20px;
         }
 
+        .tarjeta-agradecimiento::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="rgba(30,63,102,0.05)" d="M50,0 C60,20 80,20 100,30 C80,40 60,60 50,80 C40,60 20,40 0,30 C20,20 40,20 50,0 Z"/></svg>') center/contain no-repeat;
+            opacity: 0.5;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .circle {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .circle span:first-child {
+                font-size: 1.5rem;
+            }
+            
+            .evento-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .galeria img {
+                max-width: 150px;
+                height: 150px;
+            }
+            
+            .mensaje-final, .confirmacion-asistencia {
+                padding: 20px;
+                margin: 30px auto;
+            }
+            
+            .confirmacion-opciones {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .confirmacion-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .nombre-elegante {
+                font-size: 1.8rem;
+                padding: 10px;
+            }
 
+            .tarjeta-agradecimiento {
+                padding: 20px;
+                margin: 30px auto;
+            }
 
+            .tarjeta-agradecimiento h3 {
+                font-size: 1.8rem;
+            }
 
+            .tarjeta-agradecimiento p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .circle {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .circle span:first-child {
+                font-size: 1.3rem;
+            }
+            
+            .galeria img {
+                max-width: 120px;
+                height: 120px;
+            }
+            
+            .highlight {
+                font-size: 2rem;
+            }
+            
+            .nombre-elegante {
+                font-size: 1.5rem;
+            }
 
+            .tarjeta-agradecimiento {
+                padding: 15px;
+            }
+
+            .tarjeta-agradecimiento h3 {
+                font-size: 1.5rem;
+            }
+
+            #imagenModal {
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                object-fit: contain;
+                background: #f5f5f5;
+            }
+        }
     </style>
-<script>
-    let imagenesGaleria = [];
-    let imagenActual = 0;
-
-    function abrirModal(src) {
-        let modal = document.getElementById("modal");
-        let imagenModal = document.getElementById("imagenModal");
-
-        // Obtener todas las imágenes de la galería
-        let imagenes = document.querySelectorAll(".galeria img");
-        imagenesGaleria = Array.from(imagenes).map(img => img.src);
-
-        // Encontrar el índice de la imagen seleccionada
-        imagenActual = imagenesGaleria.indexOf(src);
-
-        if (imagenActual !== -1) {
-            imagenModal.src = imagenesGaleria[imagenActual];
-            modal.style.display = "flex";
-        } else {
-            console.error("No se encontró la imagen en la galería.");
-        }
-    }
-
-    function cerrarModal() {
-        document.getElementById("modal").style.display = "none";
-    }
-
-    function cambiarImagen(direccion) {
-        if (imagenesGaleria.length === 0) return; // Evita errores si no hay imágenes cargadas
-
-        imagenActual = (imagenActual + direccion + imagenesGaleria.length) % imagenesGaleria.length;
-        document.getElementById("imagenModal").src = imagenesGaleria[imagenActual];
-    }
-
-    // Asegurar que el modal no se muestre al recargar la página
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("modal").style.display = "none";
-    });
-
-    // Soporte para teclas izquierda y derecha
-    document.addEventListener("keydown", function (event) {
-        let modal = document.getElementById("modal");
-        if (modal.style.display === "flex") {
-            if (event.key === "ArrowRight") cambiarImagen(1);
-            if (event.key === "ArrowLeft") cambiarImagen(-1);
-            if (event.key === "Escape") cerrarModal();
-        }
-    });
-</script>
 </head>
 <body>
-    
-    <div class="container">
-        
-        <h1>Mis XV Años</h1>
-        <h2>Diana Jacqueline Ildefonso Sánchez</h2>
-        <div class="foto-principal">
-            <img src="images/xv.jpg" alt="Foto de Diana Jacqueline">
+    <!-- Sobre animado -->
+    <div class="envelope-container">
+        <div class="envelope" onclick="openEnvelope()">
+            <div class="flap"></div>
+            <div class="letter">¡Abre para ver la invitación!</div>
         </div>
-        <p><strong>Hay momentos inolvidables</strong> que se atesoran en el corazón para siempre,  
-            por esa razón, quiero que compartas conmigo este día tan especial:</p>
-    
-            <h1>Mis XV años</h1>
-    
-            <div class="flourish">── ✦ ──</div>
-    
-            <p>Acompáñanos a celebrar con la bendición de Dios y mis padres:</p>
-    
-            <p class="name">Ramón Ildefonso Sánchez & Josefina Sánchez Sánchez</p>
-    
-            <div class="flourish">── ✦ ──</div>
-    
-            <p class="highlight">Mis Padrinos</p>
-    
-            <p class="name">José Sánchez Sánchez & Juana Sánchez</p>
-
-        <div class="countdown">
-            <p>Faltan:</p>
-            <p id="countdown">Cargando...</p>
-        </div>
-        <script>
-            function actualizarCuentaRegresiva() {
-                const fechaEvento = new Date('2025-05-30T00:00:00'); // Fecha del evento (30 de mayo)
-                const ahora = new Date(); // Fecha actual
-        
-                // Calculamos la diferencia en milisegundos
-                const diferencia = fechaEvento - ahora;
-        
-                if (diferencia > 0) {
-                    // Convertimos la diferencia a días, horas, minutos y segundos
-                    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-                    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-        
-                    // Actualizamos el contenido de #countdown
-                    document.getElementById('countdown').innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
-                } else {
-                    document.getElementById('countdown').innerHTML = "¡El evento ha llegado!";
-                }
-            }
-        
-            // Actualizamos la cuenta regresiva cada segundo
-            setInterval(actualizarCuentaRegresiva, 1000);
-        
-            // Llamada inicial para mostrar el contador de inmediato
-            actualizarCuentaRegresiva();
-        </script>
-
-        <div class="imagenes-en-fila">
-            
-            <div>
-                <a href="https://www.google.com/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626333,-101.6721192,19.75z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js" target="_blank">
-                    <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco" style="width: 80px; height: auto;">
-                </a>
-                <h3>Misa</h3>
-                <p>30 de mayo del 2025</p>
-                <p>2:00 PM</p>
-                <p>Parroquia de San Francisco</p>
-                <p>Cuerámaro, Guanajuato</p>
-            </div>
-
-            <!-- Imagen con enlace a la ubicación del salón -->
-            <div>
-                <a href="https://www.google.com/maps/place/Salon+La+Cascada/@20.6179217,-101.6835474,16.25z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3" target="_blank">
-                    <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada" style="width: 80px; height: auto;">
-                </a>
-                <h3>Recepción</h3>
-                <p>30 de mayo del 2025</p>
-                <p>4:00 PM</p>
-                <p>Salón La Cascada</p>
-                <p>Cuerámaro, Guanajuato</p>
-            </div>
-
-        </div>
-
-        <div class="footer">
-            <p>¡Esperamos contar con tu presencia!</p>
-        </div>
-
-        <h2>Galería de Recuerdos</h2>
-        <div class="galeria">
-            <img src="images/foto1.png" alt="Foto 1"  onclick="abrirModal(this.src)">
-            <img src="images/foto2.jpg" alt="Foto 2"  onclick="abrirModal(this.src)">
-            <img src="images/foto3.jpg" alt="Foto 3"  onclick="abrirModal(this.src)">
-            <img src="images/foto4.jpg" alt="Foto 4"  onclick="abrirModal(this.src)">
-            <img src="images/foto5.jpg" alt="Foto 5"  onclick="abrirModal(this.src)">
-            <img src="images/foto6.jpeg" alt="Foto 6" onclick="abrirModal(this.src)">
-            <img src="images/foto7.jpeg" alt="Foto 7" onclick="abrirModal(this.src)">
-            <img src="images/foto8.jpeg" alt="Foto 8" onclick="abrirModal(this.src)">
-            <img src="images/foto9.jpeg" alt="Foto 9" onclick="abrirModal(this.src)">
-            <img src="images/foto10.jpg" alt="Foto 10" onclick="abrirModal(this.src)">
-            
-        </div>
-        <!-- Modal -->
-
-        <div id="modal" class="modal">
-            <span class="cerrar" onclick="cerrarModal()">✖</span>
-            <button class="prev" onclick="cambiarImagen(-1)">⬅</button>
-            <img id="imagenModal">
-            <button class="next" onclick="cambiarImagen(1)">➡</button>
-        </div>
-
-        <div class="mensaje-final">
-            <p>¡Gracias por ser parte de uno de los mejores días de mi vida!</p>
-            <p>Con cariño:</p>
-            <p class="firma">Diana Jacqueline</p>
-        </div>
-    
-        
-
     </div>
+
+    <!-- Contenido de la invitación -->
+    <div id="invitation-content" class="hidden">
+        <div class="container">
+            <!-- Control de música -->
+            <audio id="miAudio" controls loop>
+                <source src="audio/A Thousand Years.mp3" type="audio/mp3">
+                <source src="audio/Perfect.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            
+            <div class="music-controls">
+                <button id="prev" class="btn" onclick="previousSong()">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="playPauseBtn" class="btn" onclick="togglePlayPause()">
+                    <i class="fas fa-play"></i>
+                </button>            
+                <button id="next" class="btn" onclick="nextSong()">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+                <button id="repeat" class="btn" onclick="toggleRepeatPlaylist()">
+                    <i class="fa fa-redo"></i>
+                </button>
+            </div>
+            
+            <h1>Mis XV Años</h1>
+            <h2>Diana Jacqueline Ildefonso Sánchez</h2>
+            
+            <div class="foto-principal">
+                <img src="images/foto1.JPG" alt="Diana Jacqueline - Quinceañera">
+            </div>
+            <!-- Mensaje de invitación memorable -->
+            <div class="invitacion-memorable">
+                <div class="flor-decorativa-invitacion" style="top: 20px; left: 20px;"></div>
+                <div class="flor-decorativa-invitacion" style="bottom: 20px; right: 20px; transform: rotate(45deg);"></div>
+                
+                <div class="invitacion-texto">
+                    "En este día tan especial donde una niña se convierte en princesa,<br>
+                    te invito a ser testigo de mi sueño hecho realidad.<br>
+                    Con alegría en el corazón y la bendición de mis padres,<br>
+                    quiero compartir contigo la magia de mis XV años."
+                </div>
+                
+                <span class="invitacion-firma">Diana Jacqueline</span>
+                <div class="invitacion-decoracion"></div>
+            </div>
+            <!-- Sección de padres y padrinos -->
+            <div class="parents-section">
+                <h2 class="parents-title">Con la bendición de</h2>
+                
+                <div class="parents-container">
+                    <!-- Tarjeta de padres -->
+                    <div class="parent-card">
+                        <div class="parent-card-header">
+                            <h3>Mis Padres</h3>
+                            <p>Quienes me han guiado con amor</p>
+                        </div>
+                        
+                        <div class="parent-name">Ramón Ildefonso Sánchez</div>
+                        <div class="parent-role">Padre</div>
+                        
+                        <div class="parent-separator">♥</div>
+                        
+                        <div class="parent-name">Josefina Sánchez Sánchez</div>
+                        <div class="parent-role">Madre</div>
+                    </div>
+                    
+                    <!-- Tarjeta de padrinos -->
+                    <div class="parent-card">
+                        <div class="parent-card-header">
+                            <h3>Mis Padrinos</h3>
+                            <p>Quienes me acompañan en este día</p>
+                        </div>
+                        
+                        <div class="parent-name">José Sánchez Sánchez</div>
+                        <div class="parent-role">Padrino</div>
+                        
+                        <div class="parent-separator">♥</div>
+                        
+                        <div class="parent-name">Juana Sánchez</div>
+                        <div class="parent-role">Madrina</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuenta regresiva -->
+            <div class="countdown">
+                <h3 class="countdown-title">Faltan</h3>
+                <div class="countdown-circles">
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <div class="countdown-face countdown-face-front">
+                                <span class="countdown-number" id="days">00</span>
+                                <span class="countdown-label">Días</span>
+                            </div>
+                            <div class="countdown-face countdown-face-back">
+                                <span class="countdown-number" id="days-back">00</span>
+                                <span class="countdown-label">Días</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <div class="countdown-face countdown-face-front">
+                                <span class="countdown-number" id="hours">00</span>
+                                <span class="countdown-label">Horas</span>
+                            </div>
+                            <div class="countdown-face countdown-face-back">
+                                <span class="countdown-number" id="hours-back">00</span>
+                                <span class="countdown-label">Horas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <div class="countdown-face countdown-face-front">
+                                <span class="countdown-number" id="minutes">00</span>
+                                <span class="countdown-label">Minutos</span>
+                            </div>
+                            <div class="countdown-face countdown-face-back">
+                                <span class="countdown-number" id="minutes-back">00</span>
+                                <span class="countdown-label">Minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <div class="countdown-face countdown-face-front">
+                                <span class="countdown-number" id="seconds">00</span>
+                                <span class="countdown-label">Segundos</span>
+                            </div>
+                            <div class="countdown-face countdown-face-back">
+                                <span class="countdown-number" id="seconds-back">00</span>
+                                <span class="countdown-label">Segundos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <!-- Sección del vestido -->
+            <div class="vestido-section">
+                <h2>Mi Vestido de Ensueño</h2>
+                <p>Un diseño exclusivo en azul rey que refleja mi personalidad y elegancia</p>
+                
+                <div class="vestido-container">
+                    <div class="vestido-detail" onclick="abrirModal('images/vestido1.jpg')">
+                        <img src="images/vestido1.jpg" alt="Detalle del corsé">
+                    </div>
+                    <div class="vestido-detail" onclick="abrirModal('images/vestido2.jpg')">
+                        <img src="images/vestido2.jpg" alt="Detalle de la falda">
+                    </div>
+                    <div class="vestido-detail" onclick="abrirModal('images/vestido3.jpg')">
+                        <img src="images/vestido3.jpg" alt="Detalle de los cristales">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje de los padres -->
+            <div class="parents-message">
+                <h3>Un Mensaje de Nuestros Padres</h3>
+                <p>"Hija, verte crecer ha sido nuestro mayor regalo. Este día es el comienzo de una nueva etapa donde brillarás con luz propia. Te amamos infinitamente."</p>
+            </div>
+            
+            <!-- Ubicaciones -->
+            <div class="imagenes-en-fila">
+                <div class="evento-card">
+                    <a href="https://www.google.com/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626333,-101.6721192,19.75z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js" target="_blank">
+                        <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco">
+                    </a>
+                    <h3>Misa</h3>
+                    <p>30 de mayo del 2025</p>
+                    <p>2:00 PM</p>
+                    <p>Parroquia de San Francisco</p>
+                    <p>Cuerámaro, Guanajuato</p>
+                </div>
+
+                <div class="evento-card">
+                    <a href="https://www.google.com/maps/place/Salon+La+Cascada/@20.6179217,-101.6835474,16.25z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3" target="_blank">
+                        <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada">
+                    </a>
+                    <h3>Recepción</h3>
+                    <p>30 de mayo del 2025</p>
+                    <p>4:00 PM</p>
+                    <p>Salón La Cascada</p>
+                    <p>Cuerámaro, Guanajuato</p>
+                </div>
+            </div>
+
+            <!-- Confirmación de asistencia -->
+            <div class="confirmacion-asistencia">
+                <h3>Confirma tu asistencia</h3>
+                <p>Por favor, indícanos si podrás acompañarnos en este día tan especial</p>
+                
+                <div class="confirmacion-opciones">
+                    <button class="confirmacion-btn si" onclick="confirmarAsistencia(true)">
+                        <i class="fas fa-check-circle"></i> ¡Sí, asistiré!
+                    </button>
+                    <button class="confirmacion-btn no" onclick="confirmarAsistencia(false)">
+                        <i class="fas fa-times-circle"></i> No podré asistir
+                    </button>
+                </div>
+                
+                <div id="mensaje-confirmacion" style="margin-top: 20px; font-weight: 600;"></div>
+            </div>
+
+            <!-- Tarjeta de agradecimiento -->
+            <div class="tarjeta-agradecimiento">
+                <div class="tarjeta-contenido">
+                    <h3>Gracias por acompañarme</h3>
+                    <p>Tu presencia es el mejor regalo que podría recibir en este día tan especial</p>
+                    <div class="firma">Diana Jacqueline</div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>¡Esperamos contar con tu presencia!</p>
+            </div>
+
+            <!-- Galería -->
+            <h2>Galería de Recuerdos</h2>
+            <div class="galeria">
+                <img src="images/foto1.JPG" alt="Foto 1" onclick="abrirModal(this.src)">
+                <img src="images/foto2.jpg" alt="Foto 2" onclick="abrirModal(this.src)">
+                <img src="images/foto3.jpg" alt="Foto 3" onclick="abrirModal(this.src)">
+                <img src="images/foto4.jpg" alt="Foto 4" onclick="abrirModal(this.src)">
+                <img src="images/foto5.jpg" alt="Foto 5" onclick="abrirModal(this.src)">
+                <img src="images/foto6.JPG" alt="Foto 6" onclick="abrirModal(this.src)">
+                <img src="images/foto7.JPG" alt="Foto 7" onclick="abrirModal(this.src)">
+                <img src="images/foto8.JPG" alt="Foto 8" onclick="abrirModal(this.src)">
+                <img src="images/foto9.JPG" alt="Foto 9" onclick="abrirModal(this.src)">
+                <img src="images/foto10.jpg" alt="Foto 10" onclick="abrirModal(this.src)">
+                <img src="images/foto11.JPG" alt="Foto 11" onclick="abrirModal(this.src)">
+                <img src="images/foto12.JPG" alt="Foto 12" onclick="abrirModal(this.src)">
+            </div>
+
+            <!-- Modal para la galería -->
+            <div id="modal" class="modal">
+                <span class="cerrar" onclick="cerrarModal()">✖</span>
+                <button class="prev" onclick="cambiarImagen(-1)">❮</button>
+                <img id="imagenModal">
+                <button class="next" onclick="cambiarImagen(1)">❯</button>
+            </div>
+
+            <!-- Mensaje final -->
+            <div class="mensaje-final">
+                <p>¡Gracias por ser parte de uno de los mejores días de mi vida!</p>
+                <p>Con cariño:</p>
+                <p class="firma">Diana Jacqueline</p>
+            </div>
+            
+            <!-- Hashtag para redes sociales -->
+            <div style="margin: 30px 0; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--azul-rey);">
+                #DianaXVazul
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para partículas -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Función para crear elementos decorativos
+        function crearDecoracion() {
+            const posiciones = [
+                {top: '10%', left: '5%'},
+                {top: '15%', left: '80%'},
+                {top: '30%', left: '20%'},
+                {top: '40%', left: '70%'},
+                {top: '60%', left: '10%'},
+                {top: '70%', left: '85%'},
+                {top: '85%', left: '25%'},
+                {top: '90%', left: '65%'}
+            ];
+            
+            posiciones.forEach((pos, index) => {
+                const elemento = document.createElement('div');
+                elemento.className = `decoracion ${index % 2 === 0 ? 'mariposa-decorativa' : 'flor-decorativa'}`;
+                elemento.style.top = pos.top;
+                elemento.style.left = pos.left;
+                elemento.style.animationDelay = `${index * 0.5}s`;
+                elemento.style.width = `${30 + (index * 5)}px`;
+                elemento.style.height = `${30 + (index * 5)}px`;
+                document.body.appendChild(elemento);
+            });
+        }
+
+        // Función para abrir el sobre
+        function openEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            const envelopeContainer = document.querySelector('.envelope-container');
+            const invitationContent = document.getElementById('invitation-content');
+            
+            // Asegurarse que el sobre esté cerrado inicialmente
+            envelope.classList.remove('open');
+            
+            // Forzar un reflow para reiniciar la animación
+            void envelope.offsetWidth;
+            
+            // Abrir el sobre
+            envelope.classList.add('open');
+            
+            // Ocultar el sobre y mostrar el contenido después de la animación
+            setTimeout(() => {
+                envelopeContainer.style.display = 'none';
+                invitationContent.classList.remove('hidden');
+                
+                // Reproducir la canción automáticamente
+                const audio = document.getElementById('miAudio');
+                audio.play().catch(e => console.log("Autoplay no permitido:", e));
+                
+                // Inicializar partículas
+                initParticles();
+                
+                // Crear elementos decorativos
+                crearDecoracion();
+                
+                // Lanzar confeti
+                crearConfeti();
+            }, 800);
+        }
+
+        // Inicializar partículas
+        function initParticles() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#1E3F66" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#4682B4", "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": true, "mode": "grab" },
+                        "onclick": { "enable": true, "mode": "push" }
+                    }
+                }
+            });
+        }
+        
+        // Crear efecto de confeti
+        function crearConfeti() {
+            const colores = ['#87CEEB', '#4682B4', '#B0E0E6', '#1E3F66', '#D4AF37'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                
+                document.body.appendChild(confetti);
+                
+                // Eliminar el confeti después de la animación
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
+            }
+        }
+        
+        // Crear efecto de fuegos artificiales
+        function crearFuegosArtificiales() {
+            const colors = ['#D4AF37', '#1E3F66', '#87CEEB', '#B0E0E6', '#4682B4'];
+            
+            for (let i = 0; i < 30; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                
+                // Posición aleatoria en la pantalla
+                const x = (Math.random() * window.innerWidth);
+                const y = (Math.random() * window.innerHeight);
+                
+                firework.style.left = `${x}px`;
+                firework.style.top = `${y}px`;
+                firework.style.setProperty('--x', `${Math.random() * 100 - 50}px`);
+                firework.style.setProperty('--y', `${Math.random() * 100 - 50}px`);
+                firework.style.boxShadow = `0 0 10px 5px ${colors[i % colors.length]}`;
+                
+                document.body.appendChild(firework);
+                
+                // Eliminar después de la animación
+                setTimeout(() => {
+                    if (firework.parentNode) {
+                        firework.parentNode.removeChild(firework);
+                    }
+                }, 2000);
+            }
+        }
+        
+        // Cuenta regresiva
+        function actualizarCuentaRegresiva() {
+            const fechaEvento = new Date('2025-05-30T00:00:00');
+            const ahora = new Date();
+            const diferencia = fechaEvento - ahora;
+            
+            if (diferencia > 0) {
+                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+                
+                // Actualizar front
+                document.getElementById('days').textContent = String(dias).padStart(2, '0');
+                document.getElementById('hours').textContent = String(horas).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutos).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(segundos).padStart(2, '0');
+                
+                // Actualizar back (para el efecto flip)
+                document.getElementById('days-back').textContent = String(dias).padStart(2, '0');
+                document.getElementById('hours-back').textContent = String(horas).padStart(2, '0');
+                document.getElementById('minutes-back').textContent = String(minutos).padStart(2, '0');
+                document.getElementById('seconds-back').textContent = String(segundos).padStart(2, '0');
+                
+                // Añadir animación cuando cambia el valor
+                if (segundos === 59) {
+                    document.querySelectorAll('.countdown-card').forEach(card => {
+                        card.classList.add('flipping');
+                        setTimeout(() => card.classList.remove('flipping'), 800);
+                    });
+                }
+                
+                // Mensaje motivacional
+                const countdownMsg = document.querySelector('.countdown-title');
+                if (dias === 1) {
+                    countdownMsg.innerHTML = '¡Mañana es el gran día!';
+                } else if (dias < 7) {
+                    countdownMsg.innerHTML = '¡La cuenta regresiva está por terminar!';
+                } else if (dias < 30) {
+                    countdownMsg.innerHTML = '¡Pronto será mi día especial!';
+                }
+            } else {
+                document.querySelector('.countdown-circles').innerHTML = `
+                    <div class="mensaje-final">
+                        <p>¡El gran día ha llegado!</p>
+                        <p class="firma">Diana Jacqueline</p>
+                    </div>`;
+            }
+        }
+        
+        setInterval(actualizarCuentaRegresiva, 1000);
+        actualizarCuentaRegresiva();
+        
+        // Galería de imágenes
+        let imagenesGaleria = [];
+        let imagenActual = 0;
+        
+        function abrirModal(src) {
+            const modal = document.getElementById("modal");
+            const imagenModal = document.getElementById("imagenModal");
+            
+            // Obtener solo imágenes que existen realmente
+            const imagenes = Array.from(document.querySelectorAll(".galeria img")).filter(img => {
+                return img.src && !img.src.includes('undefined');
+            });
+            
+            imagenesGaleria = imagenes.map(img => img.src);
+            imagenActual = imagenesGaleria.indexOf(src);
+            
+            if (imagenActual !== -1) {
+                imagenModal.src = imagenesGaleria[imagenActual];
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }
+        
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        
+        function cambiarImagen(direccion) {
+            if (!imagenesGaleria || imagenesGaleria.length === 0) return;
+            
+            imagenActual += direccion;
+            
+            // Circular suave
+            if (imagenActual >= imagenesGaleria.length) {
+                imagenActual = 0;
+            } else if (imagenActual < 0) {
+                imagenActual = imagenesGaleria.length - 1;
+            }
+            
+            // Validar que la imagen exista antes de mostrarla
+            if (imagenesGaleria[imagenActual]) {
+                document.getElementById("imagenModal").src = imagenesGaleria[imagenActual];
+            } else {
+                // Si no existe, avanzar a la siguiente
+                cambiarImagen(direccion > 0 ? 1 : -1);
+            }
+        }
+        
+        // Control de música
+        const audio = document.getElementById("miAudio");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        let currentSongIndex = 0;
+        let isPlaying = false;
+        let isRepeatPlaylist = false;
+        const songs = [
+            "audio/A Thousand Years.mp3", 
+            "audio/Perfect.mp3"
+        ];
+        
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                isPlaying = true;
+            } else {
+                audio.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+            }
+        }
+        
+        function previousSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            changeSong();
+        }
+        
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            changeSong();
+        }
+        
+        function changeSong() {
+            audio.src = songs[currentSongIndex];
+            audio.play();
+            isPlaying = true;
+            playPauseBtn.innerHTML = '<i class="fa fa-pause"></i>';
+        }
+        
+        function toggleRepeatPlaylist() {
+            isRepeatPlaylist = !isRepeatPlaylist;
+            audio.loop = isRepeatPlaylist;
+            document.getElementById("repeat").classList.toggle("active", isRepeatPlaylist);
+        }
+        
+        audio.addEventListener("ended", () => {
+            if (isRepeatPlaylist) {
+                nextSong();
+            }
+        });
+
+        
+        // Confirmación de asistencia
+        function confirmarAsistencia(asistira) {
+            const mensaje = document.getElementById('mensaje-confirmacion');
+            
+            if (asistira) {
+                mensaje.innerHTML = '<i class="fas fa-check-circle" style="color: #4CAF50;"></i> ¡Gracias por confirmar! Estamos emocionados de verte en mi celebración.';
+                mensaje.style.color = '#4CAF50';
+                
+                // Efecto de confeti y fuegos artificiales al confirmar asistencia
+                setTimeout(() => {
+                    crearConfeti();
+                    crearFuegosArtificiales();
+                }, 100);
+            } else {
+                mensaje.innerHTML = '<i class="fas fa-times-circle" style="color: #F44336;"></i> Lamentamos que no puedas asistir. ¡Gracias por avisarnos!';
+                mensaje.style.color = '#F44336';
+            }
+            
+            // Aquí podrías agregar código para enviar esta confirmación a un servidor
+            // Por ejemplo: enviarConfirmacionAsistencia(asistira);
+        }
+        
+        // Event listeners para el modal
+        document.addEventListener("keydown", function(event) {
+            const modal = document.getElementById("modal");
+            if (modal.style.display === "flex") {
+                if (event.key === "ArrowRight") cambiarImagen(1);
+                if (event.key === "ArrowLeft") cambiarImagen(-1);
+                if (event.key === "Escape") cerrarModal();
+            }
+        });
+        
+        // Efecto de aparición gradual al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementos = document.querySelectorAll('.container > *');
+            elementos.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>
