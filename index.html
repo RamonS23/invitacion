@@ -1233,17 +1233,6 @@
             z-index: 1;
         }
         
-        /* Efecto de fuegos artificiales */
-        .firework {
-            position: fixed;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px 5px var(--dorado);
-            animation: firework-animation 2s ease-out forwards;
-            z-index: 9998;
-            pointer-events: none;
-        }
         
         @keyframes firework-animation {
             0% {
@@ -1486,11 +1475,6 @@
     </style>
 </head>
 <body>
-    <!-- Marcos decorativos en las esquinas -->
-    <div class="corner-decoration corner-top-left"></div>
-    <div class="corner-decoration corner-top-right"></div>
-    <div class="corner-decoration corner-bottom-left"></div>
-    <div class="corner-decoration corner-bottom-right"></div>
         
     <!-- Sobre animado -->
     <div class="envelope-container">
@@ -1566,7 +1550,7 @@
                         
                         <div class="parent-separator">♥</div>
                         
-                        <div class="parent-name">Juana Sánchez</div>
+                        <div class="parent-name">Juana </div>
                         <div class="parent-role">Madrina</div>
                     </div>
                 </div>
@@ -1672,7 +1656,7 @@
             </div>
 
             <!-- Galería -->
-            <h2>Galería de Recuerdos</h2>
+            <h2>Galería</h2>
             <div class="galeria">
                 <img src="images/foto1.JPG" alt="Foto 1" onclick="abrirModal(this.src)">
                 <img src="images/foto2.JPG" alt="Foto 2" onclick="abrirModal(this.src)">
