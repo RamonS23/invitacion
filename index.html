@@ -1233,6 +1233,17 @@
             z-index: 1;
         }
         
+        /* Efecto de fuegos artificiales */
+        .firework {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px var(--dorado);
+            animation: firework-animation 2s ease-out forwards;
+            z-index: 9998;
+            pointer-events: none;
+        }
         
         @keyframes firework-animation {
             0% {
@@ -1472,9 +1483,172 @@
             }
         }
 
+        /* Sección de fecha del evento */
+        .fecha-evento {
+            background: linear-gradient(135deg, rgba(30, 63, 102, 0.1), rgba(212, 175, 55, 0.1));
+            padding: 30px 0;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fecha-evento::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(212,175,55,0.05)" d="M50,0 C60,20 80,20 100,30 C80,40 60,60 50,80 C40,60 20,40 0,30 C20,20 40,20 50,0 Z"/></svg>');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .fecha-container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .fecha-dia {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-rey);
+            margin-bottom: 10px;
+        }
+
+        .fecha-numero {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--dorado);
+            line-height: 1;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .fecha-mes {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--azul-rey);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        /* Efecto decorativo */
+        .fecha-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--azul-celeste), var(--dorado), var(--azul-rey));
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fecha-dia {
+                font-size: 2rem;
+            }
+            
+            .fecha-numero {
+                font-size: 4rem;
+            }
+            
+            .fecha-mes {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fecha-dia {
+                font-size: 1.8rem;
+            }
+            
+            .fecha-numero {
+                font-size: 3.5rem;
+            }
+            
+            .fecha-mes {
+                font-size: 1.2rem;
+            }
+            
+            .fecha-container {
+                padding: 20px;
+            }
+        }
+
+        .fecha-moderna {
+        background: linear-gradient(to right, transparent, var(--azul-claro), transparent);
+        padding: 25px 0;
+        margin: 40px 0;
+        position: relative;
+        }
+
+        .fecha-contenido {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 25px;
+            position: relative;
+        }
+
+        .fecha-dia-moderno {
+            font-weight: 700;
+            font-family: 'Parisienne', cursive;
+            font-size: 2.5rem;
+            color: var(--azul-rey);
+            margin-bottom: 5px;
+        }
+
+        .fecha-completa-moderna {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dorado);
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .fecha-completa-moderna::before,
+        .fecha-completa-moderna::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 50px;
+            background: var(--dorado);
+        }
+
+        .fecha-completa-moderna::before {
+            left: -50px;
+        }
+
+        .fecha-completa-moderna::after {
+            right: -50px;
+        }
+
+        
+
     </style>
 </head>
 <body>
+    <!-- Marcos decorativos en las esquinas -->
+    <div class="corner-decoration corner-top-left"></div>
+    <div class="corner-decoration corner-top-right"></div>
+    <div class="corner-decoration corner-bottom-left"></div>
+    <div class="corner-decoration corner-bottom-right"></div>
         
     <!-- Sobre animado -->
     <div class="envelope-container">
@@ -1517,6 +1691,66 @@
                 <span class="invitacion-firma">Diana Jacqueline</span>
                 <div class="invitacion-decoracion"></div>
             </div>
+            <div class="fecha-moderna">
+                <div class="fecha-contenido">
+                    <span class="fecha-dia-moderno">Viernes</span>
+                    <span class="fecha-completa-moderna">30 de Mayo, 2025</span>
+                </div>
+            </div>
+                        <!-- Cuenta regresiva -->
+                        <div class="countdown">
+                            <h3 class="countdown-title">Faltan</h3>
+                            <div class="countdown-circles">
+                                <div class="countdown-item">
+                                    <div class="countdown-card">
+                                        <div class="countdown-face countdown-face-front">
+                                            <span class="countdown-number" id="days">00</span>
+                                            <span class="countdown-label">Días</span>
+                                        </div>
+                                        <div class="countdown-face countdown-face-back">
+                                            <span class="countdown-number" id="days-back">00</span>
+                                            <span class="countdown-label">Días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-card">
+                                        <div class="countdown-face countdown-face-front">
+                                            <span class="countdown-number" id="hours">00</span>
+                                            <span class="countdown-label">Horas</span>
+                                        </div>
+                                        <div class="countdown-face countdown-face-back">
+                                            <span class="countdown-number" id="hours-back">00</span>
+                                            <span class="countdown-label">Horas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-card">
+                                        <div class="countdown-face countdown-face-front">
+                                            <span class="countdown-number" id="minutes">00</span>
+                                            <span class="countdown-label">Minutos</span>
+                                        </div>
+                                        <div class="countdown-face countdown-face-back">
+                                            <span class="countdown-number" id="minutes-back">00</span>
+                                            <span class="countdown-label">Minutos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-card">
+                                        <div class="countdown-face countdown-face-front">
+                                            <span class="countdown-number" id="seconds">00</span>
+                                            <span class="countdown-label">Segundos</span>
+                                        </div>
+                                        <div class="countdown-face countdown-face-back">
+                                            <span class="countdown-number" id="seconds-back">00</span>
+                                            <span class="countdown-label">Segundos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             <!-- Sección de padres y padrinos -->
             <div class="parents-section">
                 <h2 class="parents-title">Con la bendición de</h2>
@@ -1550,7 +1784,7 @@
                         
                         <div class="parent-separator">♥</div>
                         
-                        <div class="parent-name">Juana Domingo Hernández </div>
+                        <div class="parent-name">Juana Domingo Hernández</div>
                         <div class="parent-role">Madrina</div>
                     </div>
                 </div>
@@ -1587,60 +1821,7 @@
             </div>
             
 
-            <!-- Cuenta regresiva -->
-            <div class="countdown">
-                <h3 class="countdown-title">Faltan</h3>
-                <div class="countdown-circles">
-                    <div class="countdown-item">
-                        <div class="countdown-card">
-                            <div class="countdown-face countdown-face-front">
-                                <span class="countdown-number" id="days">00</span>
-                                <span class="countdown-label">Días</span>
-                            </div>
-                            <div class="countdown-face countdown-face-back">
-                                <span class="countdown-number" id="days-back">00</span>
-                                <span class="countdown-label">Días</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-card">
-                            <div class="countdown-face countdown-face-front">
-                                <span class="countdown-number" id="hours">00</span>
-                                <span class="countdown-label">Horas</span>
-                            </div>
-                            <div class="countdown-face countdown-face-back">
-                                <span class="countdown-number" id="hours-back">00</span>
-                                <span class="countdown-label">Horas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-card">
-                            <div class="countdown-face countdown-face-front">
-                                <span class="countdown-number" id="minutes">00</span>
-                                <span class="countdown-label">Minutos</span>
-                            </div>
-                            <div class="countdown-face countdown-face-back">
-                                <span class="countdown-number" id="minutes-back">00</span>
-                                <span class="countdown-label">Minutos</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-card">
-                            <div class="countdown-face countdown-face-front">
-                                <span class="countdown-number" id="seconds">00</span>
-                                <span class="countdown-label">Segundos</span>
-                            </div>
-                            <div class="countdown-face countdown-face-back">
-                                <span class="countdown-number" id="seconds-back">00</span>
-                                <span class="countdown-label">Segundos</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Tarjeta de agradecimiento -->
             <div class="tarjeta-agradecimiento">
@@ -1659,10 +1840,10 @@
             <h2>Galería</h2>
             <div class="galeria">
                 <img src="images/foto1.JPG" alt="Foto 1" onclick="abrirModal(this.src)">
-                <img src="images/foto2.JPG" alt="Foto 2" onclick="abrirModal(this.src)">
-                <img src="images/foto3.JPG" alt="Foto 3" onclick="abrirModal(this.src)">
-                <img src="images/foto4.JPG" alt="Foto 4" onclick="abrirModal(this.src)">
-                <img src="images/foto5.JPG" alt="Foto 5" onclick="abrirModal(this.src)">
+                <img src="images/foto2.jpg" alt="Foto 2" onclick="abrirModal(this.src)">
+                <img src="images/foto3.jpg" alt="Foto 3" onclick="abrirModal(this.src)">
+                <img src="images/foto4.jpg" alt="Foto 4" onclick="abrirModal(this.src)">
+                <img src="images/foto5.jpg" alt="Foto 5" onclick="abrirModal(this.src)">
                 <img src="images/foto6.JPG" alt="Foto 6" onclick="abrirModal(this.src)">
             </div>
 
@@ -1688,8 +1869,7 @@
         </div>
     </div>
 
-    <!-- Script para partículas -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     
     <script>
         // Función para crear elementos decorativos
