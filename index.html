@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         :root {
@@ -33,7 +35,7 @@
             font-family: 'Montserrat', sans-serif;
             background: 
                 /* Fondo principal */
-                linear-gradient(135deg, var(--azul-claro), var(--azul-celeste)),
+                linear-gradient(135deg, var(--azul-celeste), var(--azul-medio)),
                 /* Textura sutil */
                 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="rgba(255,255,255,0.02)" d="M100,50 C120,30 140,40 160,30 C180,20 190,40 200,50 C190,60 180,80 160,70 C140,60 120,70 100,60 C80,50 60,60 40,50 C20,40 10,20 0,30 C10,40 20,60 40,50 C60,40 80,30 100,50 Z"/></svg>');
             color: var(--azul-oscuro);
@@ -224,10 +226,10 @@
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 5rem;
             font-weight: 700;
             margin-top: 20px;
-            background: linear-gradient(to right, var(--azul-medio), var(--azul-rey));
+            background: linear-gradient(to right, var(--azul-oscuro), var(--azul-oscuro));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -237,19 +239,26 @@
         h1::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom:  -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(to right, var(--azul-celeste), var(--dorado));
+            width: 120%;
+            height: 5px;
+            background: linear-gradient(to right, var(--dorado));
             border-radius: 3px;
+            
         }
         
         h2 {
-            font-size: 2.2rem;
-            margin-top: 30px;
+            font-family: 'Merriweather',  serif; /* Parisienne es más elegante */
+            font-size: 3rem; /* Aumenté el tamaño (antes era 2.2rem) */
+            margin-top: 10px; /* Reduje el margen superior */
+            color: var(--azul-rey); /* Usé el azul más oscuro para más elegancia */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sutil sombra para profundidad */
+            letter-spacing: 1px; /* Un poco más de espacio entre letras */
+            font-weight: normal; /* Para que no sea muy grueso */
         }
+        
         
         h3 {
             font-size: 1.8rem;
@@ -485,12 +494,12 @@
         }
         
         .countdown-item {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0 10px;
-    perspective: 1000px;
-    }   
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        perspective: 1000px;
+        }   
 
         .countdown-card {
             width: 100%;
@@ -705,8 +714,20 @@
             margin: 40px 0;
         }
         
+        /* Galería */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            max-width: 400px; /* Añade un ancho máximo para limitar a 2 columnas */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .galeria img {
-            width: 100%;
+            width: calc(50% - 15px); /* Esto hará que solo haya 2 imágenes por fila */
             max-width: 180px;
             height: 180px;
             object-fit: cover;
@@ -716,7 +737,7 @@
             cursor: pointer;
             border: 3px solid var(--blanco);
         }
-        
+
         .galeria img:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -865,17 +886,7 @@
             z-index: -1;
             pointer-events: none;
         }
-        /* Confirmación de asistencia */
-        .confirmacion-asistencia {
-            background: linear-gradient(145deg, var(--blanco), var(--gris-claro));
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            max-width: 600px;
-            position: relative;
-            overflow: hidden;
-        }
+
         
         .confirmacion-asistencia::before {
             content: '';
@@ -1397,10 +1408,6 @@
                 font-size: 1.3rem;
             }
             
-            .galeria img {
-                max-width: 120px;
-                height: 120px;
-            }
             
             .highlight {
                 font-size: 2rem;
@@ -1426,9 +1433,65 @@
                 background: #f5f5f5;
             }
         }
+
+        /* Marcos decorativos en las esquinas */
+        .corner-decoration {
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            background-image: url('images/decoracion.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .corner-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-top-right {
+            top: 0;
+            right: 0;
+            transform: rotate(90deg);
+        }
+
+        .corner-bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(270deg);
+        }
+
+        .corner-bottom-right {
+            bottom: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .corner-decoration {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .corner-decoration {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <!-- Marcos decorativos en las esquinas -->
+    <div class="corner-decoration corner-top-left"></div>
+    <div class="corner-decoration corner-top-right"></div>
+    <div class="corner-decoration corner-bottom-left"></div>
+    <div class="corner-decoration corner-bottom-right"></div>
+        
     <!-- Sobre animado -->
     <div class="envelope-container">
         <div class="envelope" onclick="openEnvelope()">
@@ -1442,31 +1505,18 @@
         <div class="container">
             <!-- Control de música -->
             <audio id="miAudio" controls loop>
-                <source src="audio/A Thousand Years.mp3" type="audio/mp3">
+                <source src="audio/the 12 Dancing Princesses.mp3" type="audio/mp3">
                 <source src="audio/Perfect.mp3" type="audio/mp3">
                 Tu navegador no soporta el elemento de audio.
             </audio>
             
-            <div class="music-controls">
-                <button id="prev" class="btn" onclick="previousSong()">
-                    <i class="fa-solid fa-backward-step"></i>
-                </button>
-                <button id="playPauseBtn" class="btn" onclick="togglePlayPause()">
-                    <i class="fas fa-play"></i>
-                </button>            
-                <button id="next" class="btn" onclick="nextSong()">
-                    <i class="fa-solid fa-forward-step"></i>
-                </button>
-                <button id="repeat" class="btn" onclick="toggleRepeatPlaylist()">
-                    <i class="fa fa-redo"></i>
-                </button>
-            </div>
+            
             
             <h1>Mis XV Años</h1>
             <h2>Diana Jacqueline Ildefonso Sánchez</h2>
             
             <div class="foto-principal">
-                <img src="images/foto1.JPG" alt="Diana Jacqueline - Quinceañera">
+                <img src="images/foto2.JPG" alt="Diana Jacqueline - Quinceañera">
             </div>
             <!-- Mensaje de invitación memorable -->
             <div class="invitacion-memorable">
@@ -1521,6 +1571,37 @@
                     </div>
                 </div>
             </div>
+                        <!-- Ubicaciones -->
+                        <div class="imagenes-en-fila">
+                            <div class="evento-card">
+                                <a href="https://www.google.com/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626333,-101.6721192,19.75z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js" target="_blank">
+                                    <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco">
+                                </a>
+                                <h3>Misa</h3>
+                                <p>30 de mayo del 2025</p>
+                                <p>3:00 PM</p>
+                                <p>Parroquia de San Francisco</p>
+                                <p>Cuerámaro, Guanajuato</p>
+                            </div>
+            
+                            <div class="evento-card">
+                                <a href="https://www.google.com/maps/place/Salon+La+Cascada/@20.6179217,-101.6835474,16.25z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3" target="_blank">
+                                    <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada">
+                                </a>
+                                <h3>Recepción</h3>
+                                <p>30 de mayo del 2025</p>
+                                <p>5:00 PM</p>
+                                <p>Salón La Cascada</p>
+                                <p>Cuerámaro, Guanajuato</p>
+                            </div>
+                        </div>  
+            
+            <!-- Mensaje de los padres -->
+            <div class="parents-message">
+                <h3>Un Mensaje de Nuestros Padres</h3>
+                <p>"Hija, verte crecer ha sido nuestro mayor regalo. Este día es el comienzo de una nueva etapa donde brillarás con luz propia. Te amamos infinitamente."</p>
+            </div>
+            
 
             <!-- Cuenta regresiva -->
             <div class="countdown">
@@ -1576,72 +1657,6 @@
                     </div>
                 </div>
             </div>
-                        
-            <!-- Sección del vestido -->
-            <div class="vestido-section">
-                <h2>Mi Vestido de Ensueño</h2>
-                <p>Un diseño exclusivo en azul rey que refleja mi personalidad y elegancia</p>
-                
-                <div class="vestido-container">
-                    <div class="vestido-detail" onclick="abrirModal('images/vestido1.jpg')">
-                        <img src="images/vestido1.jpg" alt="Detalle del corsé">
-                    </div>
-                    <div class="vestido-detail" onclick="abrirModal('images/vestido2.jpg')">
-                        <img src="images/vestido2.jpg" alt="Detalle de la falda">
-                    </div>
-                    <div class="vestido-detail" onclick="abrirModal('images/vestido3.jpg')">
-                        <img src="images/vestido3.jpg" alt="Detalle de los cristales">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Mensaje de los padres -->
-            <div class="parents-message">
-                <h3>Un Mensaje de Nuestros Padres</h3>
-                <p>"Hija, verte crecer ha sido nuestro mayor regalo. Este día es el comienzo de una nueva etapa donde brillarás con luz propia. Te amamos infinitamente."</p>
-            </div>
-            
-            <!-- Ubicaciones -->
-            <div class="imagenes-en-fila">
-                <div class="evento-card">
-                    <a href="https://www.google.com/maps/place/Parroquia+de+San+Francisco+de+Asis+en+Cueramaro+Guanajuato/@20.626333,-101.6721192,19.75z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c74f21afbd4df:0xadff208c6c58b9a2!8m2!3d20.6267029!4d-101.6720233!16s%2Fg%2F1tgm35js" target="_blank">
-                        <img src="images/parroquia.png" alt="Ubicación de la Parroquia de San Francisco">
-                    </a>
-                    <h3>Misa</h3>
-                    <p>30 de mayo del 2025</p>
-                    <p>2:00 PM</p>
-                    <p>Parroquia de San Francisco</p>
-                    <p>Cuerámaro, Guanajuato</p>
-                </div>
-
-                <div class="evento-card">
-                    <a href="https://www.google.com/maps/place/Salon+La+Cascada/@20.6179217,-101.6835474,16.25z/data=!4m15!1m8!3m7!1s0x842c7400b465944d:0x31589244d5e761f8!2s36960+Cuer%C3%A1maro,+Gto.!3b1!8m2!3d20.6258385!4d-101.6717765!16s%2Fm%2F02rzcc9!3m5!1s0x842c758994b546a5:0x6f332b66f57be04d!8m2!3d20.6172741!4d-101.6827611!16s%2Fg%2F11gn229zc3" target="_blank">
-                        <img src="images/ubicacion.png" alt="Ubicación del Salón La Cascada">
-                    </a>
-                    <h3>Recepción</h3>
-                    <p>30 de mayo del 2025</p>
-                    <p>4:00 PM</p>
-                    <p>Salón La Cascada</p>
-                    <p>Cuerámaro, Guanajuato</p>
-                </div>
-            </div>
-
-            <!-- Confirmación de asistencia -->
-            <div class="confirmacion-asistencia">
-                <h3>Confirma tu asistencia</h3>
-                <p>Por favor, indícanos si podrás acompañarnos en este día tan especial</p>
-                
-                <div class="confirmacion-opciones">
-                    <button class="confirmacion-btn si" onclick="confirmarAsistencia(true)">
-                        <i class="fas fa-check-circle"></i> ¡Sí, asistiré!
-                    </button>
-                    <button class="confirmacion-btn no" onclick="confirmarAsistencia(false)">
-                        <i class="fas fa-times-circle"></i> No podré asistir
-                    </button>
-                </div>
-                
-                <div id="mensaje-confirmacion" style="margin-top: 20px; font-weight: 600;"></div>
-            </div>
 
             <!-- Tarjeta de agradecimiento -->
             <div class="tarjeta-agradecimiento">
@@ -1665,12 +1680,6 @@
                 <img src="images/foto4.jpg" alt="Foto 4" onclick="abrirModal(this.src)">
                 <img src="images/foto5.jpg" alt="Foto 5" onclick="abrirModal(this.src)">
                 <img src="images/foto6.JPG" alt="Foto 6" onclick="abrirModal(this.src)">
-                <img src="images/foto7.JPG" alt="Foto 7" onclick="abrirModal(this.src)">
-                <img src="images/foto8.JPG" alt="Foto 8" onclick="abrirModal(this.src)">
-                <img src="images/foto9.JPG" alt="Foto 9" onclick="abrirModal(this.src)">
-                <img src="images/foto10.jpg" alt="Foto 10" onclick="abrirModal(this.src)">
-                <img src="images/foto11.JPG" alt="Foto 11" onclick="abrirModal(this.src)">
-                <img src="images/foto12.JPG" alt="Foto 12" onclick="abrirModal(this.src)">
             </div>
 
             <!-- Modal para la galería -->
@@ -1690,7 +1699,7 @@
             
             <!-- Hashtag para redes sociales -->
             <div style="margin: 30px 0; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--azul-rey);">
-                #DianaXVazul
+                #DianaXV
             </div>
         </div>
     </div>
@@ -1988,27 +1997,6 @@
         });
 
         
-        // Confirmación de asistencia
-        function confirmarAsistencia(asistira) {
-            const mensaje = document.getElementById('mensaje-confirmacion');
-            
-            if (asistira) {
-                mensaje.innerHTML = '<i class="fas fa-check-circle" style="color: #4CAF50;"></i> ¡Gracias por confirmar! Estamos emocionados de verte en mi celebración.';
-                mensaje.style.color = '#4CAF50';
-                
-                // Efecto de confeti y fuegos artificiales al confirmar asistencia
-                setTimeout(() => {
-                    crearConfeti();
-                    crearFuegosArtificiales();
-                }, 100);
-            } else {
-                mensaje.innerHTML = '<i class="fas fa-times-circle" style="color: #F44336;"></i> Lamentamos que no puedas asistir. ¡Gracias por avisarnos!';
-                mensaje.style.color = '#F44336';
-            }
-            
-            // Aquí podrías agregar código para enviar esta confirmación a un servidor
-            // Por ejemplo: enviarConfirmacionAsistencia(asistira);
-        }
         
         // Event listeners para el modal
         document.addEventListener("keydown", function(event) {
